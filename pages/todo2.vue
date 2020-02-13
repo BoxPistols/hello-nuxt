@@ -2,8 +2,15 @@
 <div id="todo2">
   <h2>ToDo2</h2>
 
-  <ul>
-    <li v-for="todo in todos"> {{ todo }}</li>
+  <ul v-if="todos.length">
+    <li v-for="(todo, index) in todos">
+      <span><input type="checkbox" v-model="todo.isDone"></span>
+      <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+      <span @click="deleteItem(index)">[ x ]</span>
+    </li>
+  </ul>
+  <ul v-else>
+    <li>Nothig to do</li>
   </ul>
 
   <form class="" @submit.prevent="addItem">
@@ -20,12 +27,26 @@ export default {
     msg: "hello",
     name: "",
     newItem: '',
-    todos: ["A", "B", "C"],
+    todos: [
+      // { title: 'taks1', isDone: false },
+      // { title: 'taks2', isDone: false },
+      // { title: 'taks3', isDone: false },
+    ],
   }),
   methods: {
-    addItem: function(e) {
-      this.todos.push(this.newItem)
-    }
+    addItem: function() {
+      let item = {
+        title: this.newItem,
+        isDone: false
+      }
+      this.todos.push(item)
+      this.newItem = ''
+    },
+    deleteItem: function(index) {
+      if (confirm("ok?")) {
+        this.todos.splice(index, 1)
+      }
+    },
   }
 
 }
