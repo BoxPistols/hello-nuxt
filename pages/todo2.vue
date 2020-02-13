@@ -26,9 +26,9 @@ export default {
     name: "",
     newItem: '',
     todos: [
-      // { title: 'taks1', isDone: false },
-      // { title: 'taks2', isDone: false },
-      // { title: 'taks3', isDone: false },
+      { title: 'taks1', isDone: false, isDay: true },
+      { title: 'taks2', isDone: true, isDay: true },
+      { title: 'taks3', isDone: false, isDay: false },
     ],
   }),
   methods: {
@@ -45,14 +45,14 @@ export default {
         this.todos.splice(index, 1);
       }
     },
-    computed: {
-      remaining: function() {
-        var items = this.todos.filter(function(todo) {
-          return !todo.isDone;
-        });
-        return items.length;
-      }
-    }
+  },
+  computed: {
+    remaining: function() {
+      var items = this.todos.filter(function(todo) {
+        return !todo.isDone;
+      });
+      return items.length;
+    },
   }
 }
 </script>
