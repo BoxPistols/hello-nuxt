@@ -1,11 +1,14 @@
 <template>
-  <div id="">
+  <div id="todo">
     <h2>ToDo List</h2>
     <form class="" v-on:submit.prevent>
       <input type="text" v-model="newItem">
       <button v-on:click="addItem">Add item</button>
     </form>
-    <pre>{{ $data }}</pre>
+    <!-- <pre>{{ $data }}</pre> -->
+    <ul>
+      <li v-for="todo in todos">{{ todo.item }}</li>
+    </ul>
   </div>
 </template>
 <script>
@@ -29,4 +32,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+#todo{
+  padding: 20px;
+}
 </style>
