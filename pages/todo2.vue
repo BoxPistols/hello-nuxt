@@ -1,7 +1,7 @@
 <template>
 <div id="todo2">
   <h2>ToDo2</h2>
-  <p>{{ remaining }}件 /   {{ todos.length }}</p>
+  <p>{{ remaining }}件 / {{ todos.length }}</p>
   <ul>
     <li v-for="(todo, index) in todos">
       <span><input type="checkbox" v-model="todo.isDone"></span>
@@ -32,19 +32,19 @@ export default {
     ],
   }),
   methods: {
-     addItem: function() {
-       var item = {
-         title: this.newItem,
-         isDone: false
-       };
-       this.todos.push(item);
-       this.newItem = '';
-     },
-     deleteItem: function(index) {
-       if (confirm('are you sure?')) {
-         this.todos.splice(index, 1);
-       }
-   },
+    addItem: function() {
+      var item = {
+        title: this.newItem,
+        isDone: false
+      };
+      this.todos.push(item);
+      this.newItem = '';
+    },
+    deleteItem: function(index) {
+      if (confirm('are you sure?')) {
+        this.todos.splice(index, 1);
+      }
+    },
     computed: {
       remaining: function() {
         var items = this.todos.filter(function(todo) {
@@ -53,9 +53,7 @@ export default {
         return items.length;
       }
     }
-
   }
-
 }
 </script>
 
