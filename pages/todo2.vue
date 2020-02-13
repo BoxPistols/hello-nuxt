@@ -1,6 +1,7 @@
 <template>
 <div id="todo2">
   <h2>ToDo2</h2>
+  <p>{{ stationary }}</p>
   <p>{{ remaining }}件 / {{ todos.length }}</p>
   <ul>
     <li v-for="(todo, index) in todos">
@@ -25,11 +26,28 @@ export default {
     msg: "hello",
     name: "",
     newItem: '',
-    todos: [
-      { title: 'taks1', isDone: false, isDay: true },
-      { title: 'taks2', isDone: true, isDay: true },
-      { title: 'taks3', isDone: false, isDay: false },
+    todos: [{
+        title: 'taks1',
+        isDone: false,
+        isDay: true
+      },
+      {
+        title: 'taks2',
+        isDone: true,
+        isDay: true
+      },
+      {
+        title: 'taks3',
+        isDone: false,
+        isDay: false
+      },
     ],
+    st :{
+        'pencil': 100,
+        'notebook': 80,
+        'scissors': 250,
+        'sticker': 150
+      },
   }),
   methods: {
     addItem: function() {
@@ -53,6 +71,19 @@ export default {
       });
       return items.length;
     },
+    stationary: function() {
+      var stationeries = this.st
+      var tools = ['notebook', 'eraser', 'sticker', 'screw', 'paint'];
+
+      var result = tools.filter(function(value, index) {
+        for (var stationery in this) {
+          // 共通アイテム
+          if (stationery === value) return value;
+        }
+      }, stationeries) //第2引数にオブジェクトを指定
+      return result
+
+    }
   }
 }
 </script>
