@@ -1,8 +1,14 @@
 <template>
 <div id="todo2">
   <h2>ToDo2</h2>
-  <p>{{ stationary }}</p>
-  <p>{{ remaining }}件 / {{ todos.length }}</p>
+  <p>{{ stationary }}　- {{ stationary.length }}</p>
+  <p>{{ remaining }}件 / {{ st.length }}</p>
+
+  <ul>
+    <li v-for="(i, index) in st">
+      {{ i }}
+    </li>
+  </ul>
   <ul>
     <li v-for="(todo, index) in todos">
       <span><input type="checkbox" v-model="todo.isDone"></span>
@@ -79,8 +85,9 @@ export default {
         for (var stationery in this) {
           // 共通アイテム
           if (stationery === value) return value;
+
         }
-      }, stationeries) //第2引数にオブジェクトを指定
+      }, stationeries ) //第2引数にオブジェクトを指定
       return result
 
     }
