@@ -4,22 +4,24 @@
   <p>{{ stationary }}　- {{ stationary.length }}</p>
   <p>{{ remaining }}件 / {{ st.length }}</p>
 
-  <ul>
+  <!-- <ul>
     <li v-for="(i, index) in st">
       {{ i }}
     </li>
-  </ul>
+  </ul> -->
   <ul>
     <li v-for="(todo, index) in todos">
       <span><input type="checkbox" v-model="todo.isDone"></span>
       <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+      <span :class="{}">  | {{ todo.sub }}</span>
       <span @click="deleteItem(index)">[ x ]</span>
     </li>
     <li v-show="!todos.length">Nothig to do</li>
   </ul>
 
   <form class="" @submit.prevent="addItem">
-    <input type="text" v-model="newItem">
+    newItem<input type="text" v-model="newItem">
+    newItem2<input type="text" v-model="newItem2">
     <input type="submit" value="Add">
   </form>
 
@@ -32,18 +34,22 @@ export default {
     msg: "hello",
     name: "",
     newItem: '',
+    newItem2: '',
     todos: [{
         title: 'taks1',
+        sub: 'xxtaks1',
         isDone: false,
         isDay: true
       },
       {
         title: 'taks2',
+        sub: 'xxtaks2',
         isDone: true,
         isDay: true
       },
       {
         title: 'taks3',
+        sub: 'xxtaks3',
         isDone: false,
         isDay: false
       },
@@ -61,8 +67,13 @@ export default {
         title: this.newItem,
         isDone: false
       };
-      this.todos.push(item);
+      var item2 = {
+        sub: this.newItem2,
+        isDone: false
+      };
+      this.todos.push(item, item2);
       this.newItem = '';
+      this.newItem2 = '';
     },
     deleteItem: function(index) {
       if (confirm('are you sure?')) {
@@ -97,9 +108,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "./assets/style.scss";
-
+li, form{
+  display: flex;
+}
 #todo2 {
-    padding: 24px;
-    font-size: 18px;
+    padding: 4px;
+    font-size: 16px;
 }
 </style>
