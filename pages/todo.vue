@@ -7,7 +7,7 @@
     </form>
     <!-- <pre>{{ $data }}</pre> -->
     <ul>
-      <li v-for="todo in todos">{{ todo.item }}</li>
+      <li v-for="todo in todos" v-bind:key="todo">{{ todo.item }}</li>
     </ul>
   </div>
 </template>
