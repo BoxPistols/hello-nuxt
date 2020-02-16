@@ -5,6 +5,7 @@
     <router-link to="/todo">ToDo</router-link>
     <nuxt-link to="/todo2">ToDo2s</nuxt-link>
     <nuxt-link to="/dev/calc">Calc</nuxt-link>
+    <nuxt-link to="/warikan">warikan</nuxt-link>
   </div>
 </div>
 </template>
