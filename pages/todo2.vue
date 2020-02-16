@@ -1,16 +1,9 @@
 <template>
 <div id="todo2">
   <h2>ToDo2</h2>
-  <p>{{ stationary }}　- {{ stationary.length }}</p>
-  <p>{{ remaining }}件 / {{ st.length }}</p>
-
-  <!-- <ul>
-    <li v-for="(i, index) in st">
-      {{ i }}
-    </li>
-  </ul> -->
+  <p>{{ remaining }}件 / {{ todos.length }}</p>
   <ul>
-    <li v-for="(todo, index) in todos">
+    <li v-for="(todo, index) in todos" v-bind:key="todo.index">
       <span><input type="checkbox" v-model="todo.isDone"></span>
       <span :class="{done: todo.isDone}">{{ todo.title }}</span>
       <span :class="{}">  | {{ todo.sub }}</span>
@@ -88,20 +81,6 @@ export default {
       });
       return items.length;
     },
-    stationary: function() {
-      var stationeries = this.st
-      var tools = ['notebook', 'eraser', 'sticker', 'screw', 'paint'];
-
-      var result = tools.filter(function(value, index) {
-        for (var stationery in this) {
-          // 共通アイテム
-          if (stationery === value) return value;
-
-        }
-      }, stationeries ) //第2引数にオブジェクトを指定
-      return result
-
-    }
   }
 }
 </script>

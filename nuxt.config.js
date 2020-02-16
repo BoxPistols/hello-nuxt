@@ -23,7 +23,8 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/milligram.scss", "~/assets/style.scss"],
+  // css: ["~/assets/milligram.scss", "~/assets/style.scss"],
+  css: ["~/assets/style.scss"],
   /*
    ** Plugins to load before mounting the App
    */
