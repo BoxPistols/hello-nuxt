@@ -6,6 +6,8 @@
     <nuxt-link to="/todo2">ToDo2s</nuxt-link>
     <nuxt-link to="/dev/calc">Calc</nuxt-link>
     <nuxt-link to="/warikan">warikan</nuxt-link>
+    <nuxt-link to="/mypage">mypege</nuxt-link>
+    <nuxt-link to="/getSet">getSet</nuxt-link>
   </div>
 </div>
 </template>

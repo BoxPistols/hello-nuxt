@@ -100,6 +100,9 @@ export default {
     ],
   }),
   computed: {
+    totals: function(){
+
+    },
     unitPrice: function() {
       let totalP =
         (this.totalPrice +
