@@ -1,13 +1,13 @@
 <template>
 <div id="">
-  <h2 @click="A">A</h2>
+  <!-- <h2 @click="A">A</h2>
   <h2 @click="superA('argument!!')">superA</h2>
-  <h3> {{ msg }} </h3>
+  <h3> {{ msg }} </h3> -->
 
   <br>
-  <h2>{{ num }}</h2>
-  <button type="button" @click="add(1)">+1</button>
-  <button type="button" @click="add(-1)">-1</button>
+  <h2 :class="numClass">{{ num }}</h2>
+  <button type="button" @click="add(10)">+1</button>
+  <button type="button" @click="add(-10)">-1</button>
 
 </div>
 </template>
@@ -33,7 +33,23 @@ export default {
       this.num = this.num + val
     }
   },
+  computed: {
+    numClass(){
+      if(this.num > 30 && this.num <= 60){
+        return "orange"
+      }
+      if(this.num > 60){
+        return "red"
+      }
+    }
+   },
 }
 </script>
 <style lang="scss" scoped>
+.orange{
+  color: orange
+}
+.red{
+  color: red
+}
 </style>
