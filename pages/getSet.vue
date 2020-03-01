@@ -34,6 +34,7 @@ export default {
         this.basePrice = Math.ceil(taxInPrice / 1.08)
       },
     },
+    // TODO
     // itemTotalPrice: {
     //   get: function(){
     //     return parseInt(this.items.itemA.price + this.items.itemB.price)
