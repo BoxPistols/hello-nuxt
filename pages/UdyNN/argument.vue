@@ -35,11 +35,11 @@ export default {
   },
   computed: {
     numClass(){
-      if(this.num > 30 && this.num <= 60){
-        return "orange"
-      }
       if(this.num > 60){
         return "red"
+      }
+      if(this.num > 30){ //&& this.num <= 60
+        return "orange"
       }
     }
    },
