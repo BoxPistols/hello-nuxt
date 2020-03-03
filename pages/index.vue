@@ -9,6 +9,7 @@
     <nuxt-link to="/mypage">mypege</nuxt-link>
     <nuxt-link to="/getSet">getSet</nuxt-link>
     <nuxt-link to="/UdyNN/argument">argument</nuxt-link>
+    <nuxt-link to="/percentNum">percentNum</nuxt-link>
   </div>
 </div>
 </template>
