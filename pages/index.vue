@@ -10,16 +10,26 @@
     <nuxt-link to="/getSet">getSet</nuxt-link>
     <nuxt-link to="/UdyNN/argument">argument</nuxt-link>
     <nuxt-link to="/percentNum">percentNum</nuxt-link>
+    <nuxt-link to="/dataFunc">dataFunc</nuxt-link>
   </div>
+
+  <Member :data="member"/>
 </div>
 </template>
 
 
 <script>
+import Member from '~/components/member.vue'
+
 export default {
   name: "",
+  components: {
+    Member
+  },
   data: () => ({
-
+    member:{
+      name: "俺"
+    },
   })
 }
 </script>
@@ -27,6 +37,6 @@ export default {
 .columns
   display: inline-flex
   > a
-    font-size: 24px
+    font-size: 20px
     margin-left: 12px
 </style>

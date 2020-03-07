@@ -1,10 +1,15 @@
 <template>
   <div>
-    <nuxt />
+    <header>
+      <router-link to="/">Home</router-link>
+    </header>
+    <div class="contents">
+      <nuxt />
+    </div>
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -23,7 +28,20 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+.contents{
+  color: #444;
+  padding: 48px 32px;
+}
+header{
+  background: #eee;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 12px 32px;
+  font-size: 20px;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
