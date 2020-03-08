@@ -10,7 +10,7 @@
 export default {
   name: "",
   props: {
-    price: Number
+    price: Object
   },
   data: () => ({
 
