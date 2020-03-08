@@ -11,7 +11,7 @@
     <nuxt-link to="/UdyNN/argument">argument</nuxt-link>
     <nuxt-link to="/percentNum">percentNum</nuxt-link>
     <nuxt-link to="/dataFunc">dataFunc</nuxt-link>
-    <nuxt-link to="/props">props</nuxt-link>
+    <!-- <nuxt-link to="/props">props</nuxt-link> -->
   </div>
 
   <Member :data="member" :teamName="teamName"/>
@@ -38,7 +38,8 @@ export default {
       name: "浅川拓",
       id: 1,
       position: "パシリ",
-      height: 160
+      height: 160,
+      oldHeight: 155
     },
     stationary: {
       pen: 120,

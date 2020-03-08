@@ -5,17 +5,26 @@
     <li>{{ data.name }}</li>
     <li>{{ data.id }}</li>
     <li>{{ data.position }}</li>
-    <li>{{ data.height }}</li>
+    <!-- <li>{{ data.height }}</li> -->
+    <li>
+      <Height :height="data.height" :oldHeight="data.oldHeight"
+       />
+    </li>
   </ul>
 </div>
 </template>
 <script>
+import Height from '~/components/height'
+
 export default {
   name: "",
   props: {
     data: Object,
     teamName: String,
-  }
+  },
+  components: {
+    Height
+  },
 }
 </script>
 <style lang="sass" scoped>
