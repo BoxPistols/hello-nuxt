@@ -11,25 +11,36 @@
     <nuxt-link to="/UdyNN/argument">argument</nuxt-link>
     <nuxt-link to="/percentNum">percentNum</nuxt-link>
     <nuxt-link to="/dataFunc">dataFunc</nuxt-link>
+    <nuxt-link to="/props">props</nuxt-link>
   </div>
 
+
   <Member :data="member"/>
+  <Props :price="stationary"/>
+
 </div>
 </template>
 
 
 <script>
 import Member from '~/components/member.vue'
+import Props from '~/components/props.vue'
 
 export default {
   name: "",
   components: {
-    Member
+    Member,
+    Props
   },
   data: () => ({
     member:{
       name: "俺"
     },
+    stationary: {
+      pen: 120,
+      eraser: 100,
+      scissor: 320,
+    }
   })
 }
 </script>
