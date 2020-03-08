@@ -14,9 +14,9 @@
     <nuxt-link to="/props">props</nuxt-link>
   </div>
 
-
-  <Member :data="member"/>
-  <Props :price="stationary"/>
+  <Member :data="member" :teamName="teamName"/>
+  <hr>
+  <Props :price="stationary" />
 
 </div>
 </template>
@@ -33,8 +33,12 @@ export default {
     Props
   },
   data: () => ({
-    member:{
-      name: "俺"
+    teamName: "爆音小僧",
+    member: {
+      name: "浅川拓",
+      id: 1,
+      position: "パシリ",
+      height: 160
     },
     stationary: {
       pen: 120,
