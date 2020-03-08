@@ -14,6 +14,10 @@
     <!-- <nuxt-link to="/props">props</nuxt-link> -->
   </div>
 
+  <p>
+    <input type="number" v-model="member.height">
+  </p>
+
   <Member :data="member" :teamName="teamName"/>
   <hr>
   <Props :price="stationary" />
@@ -38,7 +42,7 @@ export default {
       name: "浅川拓",
       id: 1,
       position: "パシリ",
-      height: 160,
+      height: 165,
       oldHeight: 155
     },
     stationary: {

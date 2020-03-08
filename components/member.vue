@@ -7,7 +7,7 @@
     <li>{{ data.position }}</li>
     <!-- <li>{{ data.height }}</li> -->
     <li>
-      <Height :height="data.height" :oldHeight="data.oldHeight"
+      <Height :height="data.height" :oldHeight="data.height"
        />
     </li>
   </ul>
