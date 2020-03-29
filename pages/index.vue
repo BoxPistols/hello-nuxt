@@ -2,7 +2,9 @@
 <div class="container">
 
   <h1>Home {{ $store.state.msg }}</h1>
-  <button @click="$store.commit('updateMsg')">UpDate</button>
+
+  <button @click="$store.commit('updateMsg', 'With Payload')">UpDate</button>
+
   <div class="columns">
     <router-link to="/todo">ToDo</router-link>
     <nuxt-link to="/todo2">ToDo2s</nuxt-link>

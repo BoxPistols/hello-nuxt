@@ -6,8 +6,8 @@ const store = () => {
       return {msg: 'Hello Vuex'}
     },
     mutations: {
-      updateMsg: function (state) {
-        state.msg = 'UpDate Mutation'
+      updateMsg: function (state, payload) {
+        state.msg = payload
       }
     }
   })
