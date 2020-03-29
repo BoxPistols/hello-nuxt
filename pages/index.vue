@@ -1,6 +1,8 @@
 <template>
 <div class="container">
-  <h1>Home</h1>
+
+  <h1>Home {{ $store.state.msg }}</h1>
+
   <div class="columns">
     <router-link to="/todo">ToDo</router-link>
     <nuxt-link to="/todo2">ToDo2s</nuxt-link>
@@ -21,7 +23,6 @@
 
 </div>
 </template>
-
 
 <script>
 import Member from '~/components/member.vue'
