@@ -17,6 +17,7 @@
   <Member :datas="member" :teamName="teamName" />
   <hr>
   <Props :price="stationary" />
+  <Battle/>
 
 </div>
 </template>
@@ -25,12 +26,14 @@
 <script>
 import Member from '~/components/member.vue'
 import Props from '~/components/props.vue'
+import Battle from '~/components/battle.vue'
 
 export default {
   name: "",
   components: {
     Member,
-    Props
+    Props,
+    Battle
   },
   data: () => ({
     teamName: "爆音小僧",
