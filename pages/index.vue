@@ -2,7 +2,10 @@
 <div class="container">
 
   <h1>Home {{ $store.state.msg }}</h1>
+  <!-- <h1>Store: {{ $store.state.appNum }}</h1> -->
+  <h1>appNum:  {{ appNum }}</h1>
   <button @click="$store.commit('updateMsg')">UpDate</button>
+
   <div class="columns">
     <router-link to="/todo">ToDo</router-link>
     <nuxt-link to="/todo2">ToDo2s</nuxt-link>
@@ -16,7 +19,7 @@
     <nuxt-link to="/props">props</nuxt-link>
   </div>
 
-  <Member :datas="member" :teamName="teamName" />
+  <Member :list="member" :teamName="teamName" />
   <hr>
   <Props :price="stationary" />
   <Battle/>
@@ -50,7 +53,16 @@ export default {
       scissor: 320,
     }
   }),
-
+  computed:{
+    appNum(){
+      return this.$store.state.appNum
+    }
+  },
+  methods: {
+    changeNum(val){
+      this.$store.commit('changeNum', val)
+    }
+  }
 }
 </script>
 <style lang="sass" scoped>
