@@ -14,10 +14,10 @@ const store = () => {
       updateMsg: function (state) {
         state.msg = 'UpDate Mutation'
       },
-      changeNum(state, val){
-        state.msg = 'changeNum Mutation'
-        state.appNum = state.appNum + val
-      }
+      // changeNum(state, val){
+      //   state.msg = 'changeNum Mutation'
+      //   state.appNum = state.appNum + val
+      // }
     }
 
   })
